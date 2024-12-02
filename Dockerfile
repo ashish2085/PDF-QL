@@ -4,6 +4,13 @@ FROM python:3.9-slim
 # Set the working directory
 WORKDIR /app
 
+# Create a non-root user
+RUN useradd -m appuser
+
+# Set permissions and switch to non-root user
+RUN chown -R appuser:appuser /app
+USER appuser
+
 # Copy application files
 COPY . /app
 
