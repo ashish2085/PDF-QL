@@ -4,12 +4,13 @@ FROM python:3.9-slim
 # Set the working directory
 WORKDIR /app
 
-# Create a non-root user
-RUN useradd -m appuser
+# Create a non-root user with a UID between 10000 and 20000
+RUN groupadd -g 10001 appgroup && \
+    useradd -m -u 10001 -g appgroup appuser
 
 # Set permissions and switch to non-root user
-RUN chown -R appuser:appuser /app
-USER appuser
+RUN chown -R appuser:appgroup /app
+USER 10001
 
 # Copy application files
 COPY . /app
