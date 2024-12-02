@@ -133,8 +133,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Built with ❤️ by Ashish Kumar.
 Powered by Google Gemini AI.
 Inspired by the need to make document querying seamless.
-csharp
-Copy code
+
 
 ### Steps to Publish:
 - Save this as `README.md` in the root directory of your project.
